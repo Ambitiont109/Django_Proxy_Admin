@@ -87,3 +87,10 @@ local_settings.py
 
 .env
 db.sqlite3
+
+# django migrations 
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+# django media
+upload/

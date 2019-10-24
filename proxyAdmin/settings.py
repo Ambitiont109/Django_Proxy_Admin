@@ -125,3 +125,11 @@ STATIC_URL = '/static/'
 
 # DATA_LIMIT MB
 DATA_LIMIT = 500
+
+Env = os.environ.get('DJANGO_ENV', 'local')
+print(Env)
+if Env == 'local':
+    from .settings_local import *
+elif Env == 'prod':
+    print("import")
+    from .settings_prod import *
