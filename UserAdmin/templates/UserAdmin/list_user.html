@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load custom_template_tags %}
 {% load static %}
 {% block title %} Proxy Admin{% endblock %}
 
@@ -42,7 +43,7 @@
 										<td> {{user.first_name}} </td>
 										<td> {{user.last_name}}  </td>
 										<td> {{user.username}} </td>
-										<td> {{user.data_usage}} </td>
+										<td> {{user.data_usage |MBFormat}} </td>
 										<td class="text-nowrap"><a class="mr-25" href="{% url 'UserAdmin:detail_user' user.id %}" > <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="javascript:delete_user({{user.id}});" > <i class="fa fa-close text-danger"></i> </a> </td>
 									</tr>
 									{% endfor %}

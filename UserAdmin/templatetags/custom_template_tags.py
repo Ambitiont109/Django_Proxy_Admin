@@ -14,3 +14,11 @@ def navactive(request, urls):
 @register.simple_tag
 def getUserCount():
     return User.objects.exclude(is_superuser=True).count()
+
+
+@register.filter(name='MBFormat')  # Custom Filter
+def MBFormat(byte_value):
+    print(byte_value)
+    mb_value = byte_value / 1024 / 1024
+    print(mb_value)
+    return '%.2f MB' % mb_value
