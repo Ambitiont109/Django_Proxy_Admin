@@ -19,5 +19,5 @@ from UserAdmin.views import list_user
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('UserAdmin.urls')),
-    path('', list_user)
+    path('', list_user, name="home")
 ]
